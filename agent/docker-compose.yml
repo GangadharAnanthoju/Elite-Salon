@@ -1,0 +1,11 @@
+# Local testing only — not used in production
+services:
+  agent:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src     # hot reload during dev
+      - ./data:/app/data

@@ -4,7 +4,10 @@
    Until then, local fallback answers handle common questions.
    ============================================ */
 
-const CHAT_API_URL = ''; // e.g. 'https://elitesaloon-agent.azurewebsites.net/api/chat'
+// Auto-switch: local dev uses localhost, production uses container URL
+const CHAT_API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:8001/api/chat'
+  : ''; // TODO: replace '' with Azure Container App URL when deployed
 
 const QUICK_REPLIES = [
   'What services do you offer?',

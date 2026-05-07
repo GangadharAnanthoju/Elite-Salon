@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What are your opening hours?",
+    "answer": "We are open Monday to Friday 9am–8pm, Saturday 9am–7pm, and Sunday 10am–6pm."
+  },
+  {
+    "question": "Where are you located?",
+    "answer": "Elite Saloon is at 123 Glamour Avenue, Suite 200, New York, NY 10001."
+  },
+  {
+    "question": "How do I book an appointment?",
+    "answer": "You can book by chatting with our AI assistant, calling us at (212) 555-0100, or emailing hello@elitesaloon.com."
+  },
+  {
+    "question": "How much does a haircut cost?",
+    "answer": "A classic haircut starts from $35. Fades start at $40. A full Hair & Beard Combo is $50."
+  },
+  {
+    "question": "How much does a beard trim cost?",
+    "answer": "A beard trim and shape starts from $20. A full beard sculpt/design is $28."
+  },
+  {
+    "question": "Do you offer hot towel shaves?",
+    "answer": "Yes! Our Hot Towel Straight Razor Shave is $40 and is one of our most popular services."
+  },
+  {
+    "question": "Who are your barbers?",
+    "answer": "Our team includes Adrian (Master Barber), Marcus (Senior Barber), Alex R. (Color Specialist), and Dean K. (Grooming Specialist)."
+  },
+  {
+    "question": "Can I choose my barber?",
+    "answer": "Absolutely. When booking, just let us know your preferred barber and we will do our best to accommodate you."
+  },
+  {
+    "question": "Do you do hair color?",
+    "answer": "Yes. Alex R. is our Color Specialist. Single process color starts at $65, highlights from $80, and grey blending from $70."
+  },
+  {
+    "question": "How do I cancel or reschedule?",
+    "answer": "Please cancel or reschedule at least 24 hours in advance by calling (212) 555-0100 or emailing hello@elitesaloon.com."
+  },
+  {
+    "question": "Do you accept walk-ins?",
+    "answer": "We accept walk-ins based on availability, but we recommend booking in advance to secure your preferred barber and time."
+  },
+  {
+    "question": "What payment methods do you accept?",
+    "answer": "We accept all major credit and debit cards, Apple Pay, Google Pay, and cash."
+  },
+  {
+    "question": "Do you sell gift cards?",
+    "answer": "Yes! Gift cards are available in any amount and can be purchased in-salon or by calling us."
+  },
+  {
+    "question": "Is parking available?",
+    "answer": "There is paid street parking on Glamour Avenue and a parking garage on 5th Street approximately 1 block away."
+  },
+  {
+    "question": "What products do you use?",
+    "answer": "We use premium, ammonia-free product lines. Our branded products — Elite Saloon Shampoo, Beard Oil, and Matte Paste — are also available to purchase in-salon."
+  }
+]
