@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet the master barbers of Elite Saloon — skilled, passionate, and dedicated to your look." />
+  <title>Our Barbers | Elite Saloon</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/Elite-Salon-Logo.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <style>
+    /* ---- Barber Profile Card ---- */
+    .barber-profile {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .barber-profile:last-child { border-bottom: none; }
+    .barber-profile:nth-child(even) { direction: rtl; }
+    .barber-profile:nth-child(even) > * { direction: ltr; }
+
+    .barber-profile__photo {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-card-2);
+      min-height: 480px;
+    }
+    .barber-profile__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: brightness(0.92);
+      transition: filter 0.4s, transform 0.5s;
+    }
+    .barber-profile:hover .barber-profile__photo img {
+      filter: brightness(1);
+      transform: scale(1.03);
+    }
+    .barber-profile__photo-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+    }
+    .barber-profile__photo-placeholder-initials {
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+    }
+    .barber-profile__photo-placeholder-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .barber-profile__photo-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(12,10,7,0.88);
+      border: 1px solid var(--gold-border);
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+      backdrop-filter: blur(8px);
+    }
+    .barber-profile__photo-badge-num {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+    .barber-profile__photo-badge-name {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .barber-profile__body {
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+      background: var(--bg-card);
+    }
+    .barber-profile__num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+    .barber-profile__name {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+    }
+    .barber-profile__role {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .barber-profile__role::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .barber-profile__tagline {
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      padding-left: 1rem;
+      border-left: 2px solid var(--gold-border);
+    }
+    .barber-profile__bio {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 480px;
+    }
+    .barber-profile__meta {
+      display: flex;
+      gap: 2rem;
+    }
+    .barber-profile__meta-item { }
+    .barber-profile__meta-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.25rem;
+    }
+    .barber-profile__meta-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .barber-profile__specialties-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.6rem;
+    }
+    .barber-profile__book {
+      margin-top: 0.25rem;
+    }
+
+    /* Wrapper border */
+    .barbers-wrapper {
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .barber-profile {
+        grid-template-columns: 1fr;
+        direction: ltr !important;
+      }
+      .barber-profile__photo { min-height: 360px; }
+      .barber-profile__body { padding: 2rem 1.75rem; }
+      .barber-profile__name { font-size: 1.6rem; }
+      .barber-profile__meta { flex-wrap: wrap; gap: 1.25rem; }
+    }
+    @media (max-width: 520px) {
+      .barber-profile__photo { min-height: 300px; }
+      .barber-profile__body { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/images/logo/Elite-Salon-Logo.png" alt="Elite Saloon" class="nav__logo-img" />
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Pricing</a>
+      <a href="barbers.html" class="active">Our Barbers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="btn btn-outline nav__book" onclick="openChat()">Book Appointment</button>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobile-menu">
+  <button class="nav__mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services & Pricing</a>
+  <a href="barbers.html">Our Barbers</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-gold" style="margin-top:1rem;" onclick="openChat()">Book Appointment</button>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <div class="container">
+    <div class="label">The Craftsmen</div>
+    <h1>Our Barbers</h1>
+    <p>Every barber at Elite Saloon is a master of their craft — trained, passionate, and dedicated to your look.</p>
+  </div>
+</div>
+
+<!-- Barber Profiles -->
+<section class="section section--darker">
+  <div class="container">
+    <div class="barbers-wrapper">
+
+      <!-- ===== BARBER 1 — ADRIAN ===== -->
+      <div class="barber-profile">
+        <div class="barber-profile__photo">
+          <img src="assets/images/team/Andrian.png" alt="" />
+        </div>
+        <div class="barber-profile__body">
+          <div class="barber-profile__num">01</div>
+          <div class="barber-profile__name">Adrian</div>
+          <div class="barber-profile__role">Master Barber &nbsp;·&nbsp; 10 Years Experience</div>
+          <div class="barber-profile__tagline">"Precision. Style. Confidence."</div>
+          <p class="barber-profile__bio">
+            Adrian brings a rare combination of artistry and precision to every cut. As Master Barber at Elite Saloon,
+            he sets the standard — from clean fades to sharp beard lines, his work speaks for itself.
+            Whether you're after a timeless classic or a modern statement, Adrian delivers with the kind of
+            confidence that only comes from years of true mastery.
+          </p>
+          <div class="barber-profile__meta">
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Experience</div>
+              <div class="barber-profile__meta-value">10 Years</div>
+            </div>
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Position</div>
+              <div class="barber-profile__meta-value">Master Barber</div>
+            </div>
+          </div>
+          <div>
+            <div class="barber-profile__specialties-label">Specialties</div>
+            <div class="barber-card__tags">
+              <span class="tag">Precision Fades</span>
+              <span class="tag">Beard Sculpting</span>
+              <span class="tag">Classic Cuts</span>
+              <span class="tag">Hot Towel Shave</span>
+            </div>
+          </div>
+          <div class="barber-profile__book">
+            <button class="btn btn-gold" onclick="openChat()" style="font-size:0.7rem;">
+              Book with Adrian
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BARBER 2 — MARCUS ===== -->
+      <div class="barber-profile">
+        <div class="barber-profile__photo">
+          <img src="assets/images/team/marcus.png" alt="" />
+        </div>
+        <div class="barber-profile__body">
+          <div class="barber-profile__num">02</div>
+          <div class="barber-profile__name">Marcus</div>
+          <div class="barber-profile__role">Senior Barber &nbsp;·&nbsp; 8 Years Experience</div>
+          <div class="barber-profile__tagline">"Sharp looks. Every time."</div>
+          <p class="barber-profile__bio">
+            Marcus is the definition of consistency — every client leaves the chair looking sharper
+            than when they sat down. Known for his meticulous technique and keen eye for detail,
+            he has built a loyal following that keeps coming back. His calm energy and precision
+            make every visit feel like a ritual, not just a haircut.
+          </p>
+          <div class="barber-profile__meta">
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Experience</div>
+              <div class="barber-profile__meta-value">8 Years</div>
+            </div>
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Position</div>
+              <div class="barber-profile__meta-value">Senior Barber</div>
+            </div>
+          </div>
+          <div>
+            <div class="barber-profile__specialties-label">Specialties</div>
+            <div class="barber-card__tags">
+              <span class="tag">Textured Cuts</span>
+              <span class="tag">Line-Ups</span>
+              <span class="tag">Hair & Beard Combo</span>
+              <span class="tag">Skin Fades</span>
+            </div>
+          </div>
+          <div class="barber-profile__book">
+            <button class="btn btn-gold" onclick="openChat()" style="font-size:0.7rem;">
+              Book with Marcus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BARBER 3 — ALEX ===== -->
+      <div class="barber-profile">
+        <div class="barber-profile__photo">
+          <img src="assets/images/team/AlexR.png" alt="" />
+        </div>
+        <div class="barber-profile__body">
+          <div class="barber-profile__num">03</div>
+          <div class="barber-profile__name">Alex R.</div>
+          <div class="barber-profile__role">Color Specialist &nbsp;·&nbsp; 7 Years Experience</div>
+          <div class="barber-profile__tagline">"Precision. Creativity. Perfection."</div>
+          <p class="barber-profile__bio">
+            Alex brings a fine-art background to every color consultation. Specialising in natural tones,
+            grey blending, and bold transformations, he creates results that look intentional and
+            effortless at the same time. From subtle enhancements to complete reinventions —
+            Alex reads your style and makes it work.
+          </p>
+          <div class="barber-profile__meta">
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Experience</div>
+              <div class="barber-profile__meta-value">7 Years</div>
+            </div>
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Position</div>
+              <div class="barber-profile__meta-value">Color Specialist</div>
+            </div>
+          </div>
+          <div>
+            <div class="barber-profile__specialties-label">Specialties</div>
+            <div class="barber-card__tags">
+              <span class="tag">Hair Color</span>
+              <span class="tag">Grey Blending</span>
+              <span class="tag">Highlights</span>
+              <span class="tag">Balayage</span>
+            </div>
+          </div>
+          <div class="barber-profile__book">
+            <button class="btn btn-gold" onclick="openChat()" style="font-size:0.7rem;">
+              Book with Alex
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BARBER 4 — DEAN ===== -->
+      <div class="barber-profile">
+        <div class="barber-profile__photo">
+          <img src="assets/images/team/DeanK.png" alt="" />
+        </div>
+        <div class="barber-profile__body">
+          <div class="barber-profile__num">04</div>
+          <div class="barber-profile__name">Dean K.</div>
+          <div class="barber-profile__role">Grooming Specialist &nbsp;·&nbsp; 6 Years Experience</div>
+          <div class="barber-profile__tagline">"It's not just a cut. It's your signature."</div>
+          <p class="barber-profile__bio">
+            Dean is the go-to for hot towel shaves and beard sculpting. His methodical approach
+            and genuine care for every client's comfort make his chair the most requested in
+            the house. Dean treats every visit as a ritual — taking time, using the right tools,
+            and sending you out feeling like a new man.
+          </p>
+          <div class="barber-profile__meta">
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Experience</div>
+              <div class="barber-profile__meta-value">6 Years</div>
+            </div>
+            <div class="barber-profile__meta-item">
+              <div class="barber-profile__meta-label">Position</div>
+              <div class="barber-profile__meta-value">Grooming Specialist</div>
+            </div>
+          </div>
+          <div>
+            <div class="barber-profile__specialties-label">Specialties</div>
+            <div class="barber-card__tags">
+              <span class="tag">Hot Towel Shave</span>
+              <span class="tag">Beard Sculpting</span>
+              <span class="tag">Scalp Treatments</span>
+              <span class="tag">Straight Razor</span>
+            </div>
+          </div>
+          <div class="barber-profile__book">
+            <button class="btn btn-gold" onclick="openChat()" style="font-size:0.7rem;">
+              Book with Dean
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /barbers-wrapper -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="label" style="justify-content:center;">Find Your Barber</div>
+    <h2>Book with Your Favourite</h2>
+    <p>Chat with our AI assistant to choose your barber and lock in your slot.</p>
+    <button class="btn btn-gold" onclick="openChat()">Book via Chat Assistant</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">Elite Saloon</span>
+        <p>Look good, feel confident. Premium barbershop and grooming in the heart of the city.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services & Pricing</a></li>
+          <li><a href="barbers.html">Our Barbers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Haircut & Style</a></li>
+          <li><a href="services.html">Beard Trim</a></li>
+          <li><a href="services.html">Hot Towel Shave</a></li>
+          <li><a href="services.html">Hair & Beard Combo</a></li>
+          <li><a href="services.html">Scalp Treatments</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <div class="footer__hours-row"><span>Mon – Fri</span><span>9am – 8pm</span></div>
+        <div class="footer__hours-row"><span>Saturday</span><span>9am – 7pm</span></div>
+        <div class="footer__hours-row"><span>Sunday</span><span>10am – 6pm</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elite Saloon. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chat-toggle" title="Book Appointment">✂</button>
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-header__avatar">ES</div>
+    <div class="chat-header__info">
+      <div class="chat-header__name">Elite Saloon Assistant</div>
+      <div class="chat-header__status">Online — ready to book</div>
+    </div>
+    <button class="chat-header__close" id="chat-close">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick-replies" id="quick-replies"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about services, pricing, or booking…"></textarea>
+    <button class="chat-send" id="chat-send">➤</button>
+  </div>
+  <div class="chat-footer">Powered by Elite AI</div>
+</div>
+<div class="toast-container" id="toast-container"></div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat-widget.js"></script>
+</body>
+</html>

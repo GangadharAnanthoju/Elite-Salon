@@ -1,0 +1,56 @@
+{
+  "categories": [
+    {
+      "name": "Haircuts",
+      "items": [
+        { "name": "Classic Haircut", "price": "$35", "description": "Wash, cut, and style finish." },
+        { "name": "Fade (Low / Mid / High)", "price": "$40", "description": "Precision fade with skin or blended finish." },
+        { "name": "Textured / Crop Cut", "price": "$40", "description": "Modern textured styling included." },
+        { "name": "Kids Cut (under 12)", "price": "$25" },
+        { "name": "Senior Cut (60+)", "price": "$28" }
+      ]
+    },
+    {
+      "name": "Beard Services",
+      "items": [
+        { "name": "Beard Trim & Shape", "price": "$20", "description": "Clean edges, defined lines." },
+        { "name": "Beard Design / Sculpt", "price": "$28", "description": "Custom shape for your face structure." },
+        { "name": "Beard Condition & Oil", "price": "$15", "description": "Deep nourishment and shine treatment." }
+      ]
+    },
+    {
+      "name": "Combo Packages",
+      "items": [
+        { "name": "Hair & Beard Combo", "price": "$50", "description": "Full haircut + beard trim & shape." },
+        { "name": "Fade & Beard Combo", "price": "$55", "description": "Precision fade + beard design." },
+        { "name": "The Full Works", "price": "$75", "description": "Haircut, beard sculpt, hot towel, scalp massage." }
+      ]
+    },
+    {
+      "name": "Shaving",
+      "items": [
+        { "name": "Hot Towel Straight Razor Shave", "price": "$40", "description": "The classic barbershop experience." },
+        { "name": "Head Shave (razor finish)", "price": "$45" },
+        { "name": "Neck & Edge Tidy", "price": "$12", "description": "Between visits clean-up." }
+      ]
+    },
+    {
+      "name": "Hair Color",
+      "items": [
+        { "name": "Single Process Color", "price": "$65", "description": "All-over application with ammonia-free products." },
+        { "name": "Highlights (partial)", "price": "$80" },
+        { "name": "Highlights (full)", "price": "$110" },
+        { "name": "Grey Blending", "price": "$70", "description": "Natural, seamless blend of grey." },
+        { "name": "Toner / Gloss", "price": "$35" }
+      ]
+    },
+    {
+      "name": "Treatments",
+      "items": [
+        { "name": "Scalp Massage & Treatment", "price": "$45", "description": "30-minute deep conditioning and massage." },
+        { "name": "Hot Oil Treatment", "price": "$35" },
+        { "name": "Dandruff Treatment", "price": "$40" }
+      ]
+    }
+  ]
+}

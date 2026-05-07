@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(az --version 2>&1)",
+      "PowerShell(swa --version 2>&1)",
+      "PowerShell(az account show --query \"{subscription:name, id:id}\" --output table 2>&1)",
+      "PowerShell(az login)"
+    ]
+  }
+}

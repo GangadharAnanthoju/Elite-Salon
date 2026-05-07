@@ -1,0 +1,18 @@
+{
+  "name": "Elite Salon AI Assistant",
+  "model": "claude-sonnet-4-6",
+  "systemPromptFile": "../prompts/system-prompt.md",
+  "maxTokens": 512,
+  "temperature": 0.7,
+  "cors": {
+    "allowedOrigins": [
+      "https://<your-storage-account>.z13.web.core.windows.net",
+      "http://localhost:3000"
+    ]
+  },
+  "rateLimit": {
+    "requestsPerMinute": 20,
+    "requestsPerUserPerHour": 60
+  },
+  "notes": "Deploy as Azure Function (Node 20 LTS) or Azure Container App. Set ANTHROPIC_API_KEY in environment variables."
+}

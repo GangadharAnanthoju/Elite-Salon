@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "route": "/home",
+      "redirect": "/index.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": ["/assets/*", "/data/*"]
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 404
+    }
+  },
+  "globalHeaders": {
+    "cache-control": "public, max-age=3600"
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  }
+}

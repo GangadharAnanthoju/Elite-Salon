@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find Elite Saloon — address, phone, hours, and location." />
+  <title>Contact | Elite Saloon</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/Elite-Salon-Logo.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+<nav class="nav scrolled" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/images/logo/Elite-Salon-Logo.png" alt="Elite Saloon" class="nav__logo-img" />
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Pricing</a>
+      <a href="barbers.html">Our Barbers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <button class="btn btn-outline nav__book" onclick="openChat()">Book Appointment</button>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <button class="nav__mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services & Pricing</a>
+  <a href="barbers.html">Our Barbers</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-gold" style="margin-top:1rem;" onclick="openChat()">Book Appointment</button>
+</div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="label">Find Us</div>
+    <h1>Contact</h1>
+    <p>We're here for you. Stop by, call us, or chat with our AI assistant.</p>
+  </div>
+</div>
+
+<!-- Contact Info Columns -->
+<section class="section">
+  <div class="container">
+    <div class="contact-cols">
+
+      <div class="contact-col">
+        <div class="contact-col__icon">📍</div>
+        <div class="contact-col__label">Address</div>
+        <div class="contact-col__value">
+          123 Glamour Avenue<br/>
+          Suite 200<br/>
+          New York, NY 10001
+        </div>
+      </div>
+
+      <div class="contact-col">
+        <div class="contact-col__icon">📞</div>
+        <div class="contact-col__label">Phone & Email</div>
+        <div class="contact-col__value">
+          <a href="tel:+12125550100">(212) 555-0100</a><br/><br/>
+          <a href="mailto:hello@elitesaloon.com">hello@elitesaloon.com</a>
+        </div>
+      </div>
+
+      <div class="contact-col">
+        <div class="contact-col__icon">🕐</div>
+        <div class="contact-col__label">Opening Hours</div>
+        <div class="contact-col__value">
+          <div class="hours-list">
+            <div class="hours-row">
+              <span class="hours-row__day">Monday – Friday</span>
+              <span class="hours-row__time">9:00 – 20:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-row__day">Saturday</span>
+              <span class="hours-row__time">9:00 – 19:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-row__day">Sunday</span>
+              <span class="hours-row__time">10:00 – 18:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-row__day">Public Holidays</span>
+              <span class="hours-row__time">By Appointment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Map -->
+    <div class="map-placeholder">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <p>123 Glamour Avenue, Suite 200, New York, NY 10001</p>
+      <a href="https://maps.google.com/?q=123+Glamour+Avenue+New+York" target="_blank" rel="noopener noreferrer">
+        Open in Google Maps →
+      </a>
+      <!-- To embed a real map, replace this div with:
+           <iframe src="https://maps.google.com/maps?q=...&output=embed" ...></iframe> -->
+    </div>
+  </div>
+</section>
+
+<!-- Social Links -->
+<section class="section section--darker">
+  <div class="container" style="text-align:center;">
+    <div class="label" style="justify-content:center;">Follow Along</div>
+    <h2 style="text-transform:uppercase; margin-bottom:0.75rem;">Find Us on Social</h2>
+    <p style="max-width:400px; margin:0 auto 2.5rem;">Stay up to date with our latest work, special offers, and behind-the-scenes content.</p>
+    <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+      <a href="#" class="btn btn-outline" style="gap:0.75rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="#" class="btn btn-outline" style="gap:0.75rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        Facebook
+      </a>
+      <a href="#" class="btn btn-outline" style="gap:0.75rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.13a4.85 4.85 0 0 1-1-.44z"/>
+        </svg>
+        TikTok
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Book CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="label" style="justify-content:center;">Skip the Call</div>
+    <h2>Book in Seconds</h2>
+    <p>Use our AI assistant to reserve your chair — choose your barber, service, and time right here.</p>
+    <button class="btn btn-gold" onclick="openChat()">Open Chat & Book</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">Elite Saloon</span>
+        <p>Look good, feel confident. Premium barbershop and grooming in the heart of the city.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services & Pricing</a></li>
+          <li><a href="barbers.html">Our Barbers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Haircut & Style</a></li>
+          <li><a href="services.html">Beard Trim</a></li>
+          <li><a href="services.html">Hot Towel Shave</a></li>
+          <li><a href="services.html">Hair & Beard Combo</a></li>
+          <li><a href="services.html">Scalp Treatments</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <div class="footer__hours-row"><span>Mon – Fri</span><span>9am – 8pm</span></div>
+        <div class="footer__hours-row"><span>Saturday</span><span>9am – 7pm</span></div>
+        <div class="footer__hours-row"><span>Sunday</span><span>10am – 6pm</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elite Saloon. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chat-toggle" title="Book Appointment">✂</button>
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-header__avatar">ES</div>
+    <div class="chat-header__info">
+      <div class="chat-header__name">Elite Saloon Assistant</div>
+      <div class="chat-header__status">Online — ready to book</div>
+    </div>
+    <button class="chat-header__close" id="chat-close">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick-replies" id="quick-replies"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about services, pricing, or booking…"></textarea>
+    <button class="chat-send" id="chat-send">➤</button>
+  </div>
+  <div class="chat-footer">Powered by Elite AI</div>
+</div>
+<div class="toast-container" id="toast-container"></div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat-widget.js"></script>
+</body>
+</html>

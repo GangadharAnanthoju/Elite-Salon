@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elite Saloon services and pricing — haircuts, beard trims, hot shaves, and more." />
+  <title>Services & Pricing | Elite Saloon</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/Elite-Salon-Logo.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+<nav class="nav scrolled" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/images/logo/Elite-Salon-Logo.png" alt="Elite Saloon" class="nav__logo-img" />
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services & Pricing</a>
+      <a href="barbers.html">Our Barbers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="btn btn-outline nav__book" onclick="openChat()">Book Appointment</button>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <button class="nav__mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services & Pricing</a>
+  <a href="barbers.html">Our Barbers</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-gold" style="margin-top:1rem;" onclick="openChat()">Book Appointment</button>
+</div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="label">What We Offer</div>
+    <h1>Services & Pricing</h1>
+    <p>Every service is a ritual. Transparent pricing, no surprises.</p>
+  </div>
+</div>
+
+<!-- Service Cards -->
+<section class="section section--darker">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">The Menu</div>
+      <h2>Our Core Services</h2>
+    </div>
+    <div class="services-grid" id="services-full"></div>
+  </div>
+</section>
+
+<!-- Full Pricing -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Price List</div>
+      <h2>Full Pricing Menu</h2>
+      <p>Prices may vary based on hair length and service complexity. Ask your barber during your visit.</p>
+    </div>
+    <div class="pricing-section" id="pricing-full"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="label" style="justify-content:center;">Ready to Book?</div>
+    <h2>Chat to Reserve Your Seat</h2>
+    <p>Use our AI assistant to book your appointment — pick your barber, service, and time.</p>
+    <button class="btn btn-gold" onclick="openChat()">Book via AI Assistant</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">Elite Saloon</span>
+        <p>Look good, feel confident. Premium barbershop and grooming in the heart of the city.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services & Pricing</a></li>
+          <li><a href="barbers.html">Our Barbers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Haircut & Style</a></li>
+          <li><a href="services.html">Beard Trim</a></li>
+          <li><a href="services.html">Hot Towel Shave</a></li>
+          <li><a href="services.html">Hair & Beard Combo</a></li>
+          <li><a href="services.html">Scalp Treatments</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <div class="footer__hours-row"><span>Mon – Fri</span><span>9am – 8pm</span></div>
+        <div class="footer__hours-row"><span>Saturday</span><span>9am – 7pm</span></div>
+        <div class="footer__hours-row"><span>Sunday</span><span>10am – 6pm</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elite Saloon. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chat-toggle" title="Book Appointment">✂</button>
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-header__avatar">ES</div>
+    <div class="chat-header__info">
+      <div class="chat-header__name">Elite Saloon Assistant</div>
+      <div class="chat-header__status">Online — ready to book</div>
+    </div>
+    <button class="chat-header__close" id="chat-close">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick-replies" id="quick-replies"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about services, pricing, or booking…"></textarea>
+    <button class="chat-send" id="chat-send">➤</button>
+  </div>
+  <div class="chat-footer">Powered by Elite AI</div>
+</div>
+<div class="toast-container" id="toast-container"></div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat-widget.js"></script>
+</body>
+</html>

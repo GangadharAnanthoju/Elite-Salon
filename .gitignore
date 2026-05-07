@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment / secrets
+.env
+.env.local
+*.env
+
+# Azure
+.azure/
+local.settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.suo
+*.user
+
+# Logs
+*.log
+npm-debug.log*
+
+# Memory (internal Claude files)
+memory/

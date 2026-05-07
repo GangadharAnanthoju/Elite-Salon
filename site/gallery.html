@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elite Saloon gallery — inside our barbershop, our craft, and our clients." />
+  <title>Gallery | Elite Saloon</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/Elite-Salon-Logo.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <style>
+    .gallery-full {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 320px;
+      gap: 6px;
+    }
+    .gallery-full .gallery-item--tall  { grid-row: span 2; }
+    .gallery-full .gallery-item--wide  { grid-column: span 2; }
+    @media (max-width: 900px) {
+      .gallery-full { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 260px; }
+      .gallery-full .gallery-item--wide { grid-column: span 1; }
+    }
+    @media (max-width: 520px) {
+      .gallery-full { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .gallery-full .gallery-item--tall { grid-row: span 1; }
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem 1.25rem 1rem;
+      background: linear-gradient(transparent, rgba(12,10,7,0.85));
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/images/logo/Elite-Salon-Logo.png" alt="Elite Saloon" class="nav__logo-img" />
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Pricing</a>
+      <a href="barbers.html">Our Barbers</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="btn btn-outline nav__book" onclick="openChat()">Book Appointment</button>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <button class="nav__mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services & Pricing</a>
+  <a href="barbers.html">Our Barbers</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-gold" style="margin-top:1rem;" onclick="openChat()">Book Appointment</button>
+</div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="label">The Experience</div>
+    <h1>Gallery</h1>
+    <p>Inside Elite Saloon — the space, the craft, and the results.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-full">
+
+      <!-- Col 1 tall: chairs interior -->
+      <div class="gallery-item gallery-item--tall">
+        <img src="assets/images/gallery/gallery-02.png" alt="Elite Saloon barber chairs" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Chairs</div>
+      </div>
+
+      <!-- Barber cutting hair -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery-05.png" alt="Barber at work" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Craft</div>
+      </div>
+
+      <!-- Hot shave -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery-08.png" alt="Hot towel shave" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">Hot Towel Shave</div>
+      </div>
+
+      <!-- Interior station, wide -->
+      <div class="gallery-item gallery-item--wide">
+        <img src="assets/images/gallery/gallery-07.png" alt="Elite Saloon station" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Station</div>
+      </div>
+
+      <!-- Tools -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery-04.png" alt="Professional barber tools" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Tools</div>
+      </div>
+
+      <!-- Products -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery-06.png" alt="Elite Saloon premium products" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Products</div>
+      </div>
+
+      <!-- Lounge -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery-09.png" alt="Lounge area" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Lounge</div>
+      </div>
+
+      <!-- Sign — wide -->
+      <div class="gallery-item gallery-item--wide">
+        <img src="assets/images/gallery/gallery-10.png" alt="Look Good, Feel Confident" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">Look Good, Feel Confident</div>
+      </div>
+
+      <!-- Entrance door -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery-01.png" alt="Elite Saloon entrance" loading="lazy" />
+        <div class="gallery-item__overlay">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="gallery-caption">The Entrance</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div class="label" style="justify-content:center;">Like What You See?</div>
+    <h2>Experience It for Yourself</h2>
+    <p>Book your appointment and walk out looking and feeling your best.</p>
+    <button class="btn btn-gold" onclick="openChat()">Book Appointment</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">Elite Saloon</span>
+        <p>Look good, feel confident. Premium barbershop and grooming in the heart of the city.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services & Pricing</a></li>
+          <li><a href="barbers.html">Our Barbers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Haircut & Style</a></li>
+          <li><a href="services.html">Beard Trim</a></li>
+          <li><a href="services.html">Hot Towel Shave</a></li>
+          <li><a href="services.html">Hair & Beard Combo</a></li>
+          <li><a href="services.html">Scalp Treatments</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <div class="footer__hours-row"><span>Mon – Fri</span><span>9am – 8pm</span></div>
+        <div class="footer__hours-row"><span>Saturday</span><span>9am – 7pm</span></div>
+        <div class="footer__hours-row"><span>Sunday</span><span>10am – 6pm</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elite Saloon. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chat-toggle" title="Book Appointment">✂</button>
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-header__avatar">ES</div>
+    <div class="chat-header__info">
+      <div class="chat-header__name">Elite Saloon Assistant</div>
+      <div class="chat-header__status">Online — ready to book</div>
+    </div>
+    <button class="chat-header__close" id="chat-close">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick-replies" id="quick-replies"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about services, pricing, or booking…"></textarea>
+    <button class="chat-send" id="chat-send">➤</button>
+  </div>
+  <div class="chat-footer">Powered by Elite AI</div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightbox-close">✕</button>
+  <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat-widget.js"></script>
+</body>
+</html>

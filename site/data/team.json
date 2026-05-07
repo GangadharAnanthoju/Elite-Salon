@@ -1,0 +1,46 @@
+[
+  {
+    "id": "adrian",
+    "name": "Adrian",
+    "role": "Master Barber",
+    "tagline": "Precision. Style. Confidence.",
+    "bio": "Adrian brings a rare combination of artistry and precision to every cut. As Master Barber at Elite Saloon, he sets the standard — from clean fades to sharp beard lines, his work speaks for itself.",
+    "photo": "assets/images/team/Andrian.png",
+    "initials": "AD",
+    "specialties": ["Precision Fades", "Beard Sculpting", "Classic Cuts"],
+    "experience": "10 Years"
+  },
+  {
+    "id": "marcus",
+    "name": "Marcus",
+    "role": "Senior Barber",
+    "tagline": "Sharp looks. Every time.",
+    "bio": "Marcus is the definition of consistency — every client leaves the chair looking sharper than when they sat down. Known for his meticulous technique and attention to detail, he has built a loyal following that keeps coming back.",
+    "photo": "assets/images/team/marcus.png",
+    "initials": "MC",
+    "specialties": ["Textured Cuts", "Line-Ups", "Hair & Beard Combo"],
+    "experience": "8 Years"
+  },
+  {
+    "id": "alex",
+    "name": "Alex R.",
+    "role": "Color Specialist",
+    "tagline": "Color that moves with you.",
+    "bio": "Alex brings a fine-art background to every color consultation. Specialising in natural tones, grey blending, and bold transformations, he creates results that look intentional and effortless at the same time.",
+    "photo": "assets/images/team/alex.png",
+    "initials": "AR",
+    "specialties": ["Hair Color", "Grey Blending", "Highlights & Balayage"],
+    "experience": "7 Years"
+  },
+  {
+    "id": "dean",
+    "name": "Dean K.",
+    "role": "Grooming Specialist",
+    "tagline": "The ritual is the result.",
+    "bio": "Dean is the go-to for hot towel shaves and beard sculpting. His methodical approach and genuine care for every client's comfort make his chair the most requested in the house.",
+    "photo": "assets/images/team/dean.png",
+    "initials": "DK",
+    "specialties": ["Hot Towel Shave", "Beard Sculpting", "Scalp Treatments"],
+    "experience": "6 Years"
+  }
+]

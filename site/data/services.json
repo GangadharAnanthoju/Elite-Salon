@@ -1,0 +1,50 @@
+[
+  {
+    "id": "haircut",
+    "name": "Haircut & Style",
+    "icon": "✂️",
+    "description": "Precision cuts shaped to your face and lifestyle. Includes consultation, wash, cut, and finish.",
+    "startingFrom": "From $35",
+    "duration": "45 min"
+  },
+  {
+    "id": "beard",
+    "name": "Beard Trim & Shape",
+    "icon": "🪒",
+    "description": "Clean lines, sharp edges, and a sculpted finish. Your beard deserves the same attention as your hair.",
+    "startingFrom": "From $20",
+    "duration": "20 min"
+  },
+  {
+    "id": "combo",
+    "name": "Hair & Beard Combo",
+    "icon": "💈",
+    "description": "The full treatment — precision haircut paired with a beard trim for a complete, polished look.",
+    "startingFrom": "From $50",
+    "duration": "60 min"
+  },
+  {
+    "id": "shave",
+    "name": "Hot Towel Shave",
+    "icon": "🔥",
+    "description": "The classic barbershop ritual. Hot towel, premium lather, straight razor — the closest shave possible.",
+    "startingFrom": "From $40",
+    "duration": "45 min"
+  },
+  {
+    "id": "color",
+    "name": "Hair Color & Highlights",
+    "icon": "🎨",
+    "description": "From subtle enhancements to bold transformations. Ammonia-free products, applied by color specialists.",
+    "startingFrom": "From $65",
+    "duration": "60–120 min"
+  },
+  {
+    "id": "treatment",
+    "name": "Scalp Treatment",
+    "icon": "💆",
+    "description": "Deep conditioning and scalp massage to restore health, reduce dryness, and boost growth.",
+    "startingFrom": "From $45",
+    "duration": "30 min"
+  }
+]
