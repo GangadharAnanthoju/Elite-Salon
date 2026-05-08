@@ -6,6 +6,13 @@
   <meta name="description" content="Meet the master barbers of Elite Saloon — skilled, passionate, and dedicated to your look." />
   <title>Our Barbers | Elite Saloon</title>
   <link rel="icon" type="image/png" href="assets/images/logo/Elite-Salon-Logo.png" />
+  <!-- Calendly: preconnect warms up the connection before button is clicked -->
+  <link rel="preconnect" href="https://assets.calendly.com" />
+  <link rel="preconnect" href="https://calendly.com" />
+  <link rel="dns-prefetch" href="https://assets.calendly.com" />
+  <link rel="prefetch" href="https://calendly.com/gangadhar-ananthoju-sysintinc/haircut-with-adrian" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
   <style>
@@ -280,7 +287,8 @@
             </div>
           </div>
           <div class="barber-profile__book">
-            <button class="btn btn-gold" onclick="openChat()" style="font-size:0.7rem;">
+            <button class="btn btn-gold" style="font-size:0.7rem;"
+              onclick="Calendly.initPopupWidget({url:'https://calendly.com/gangadhar-ananthoju-sysintinc/haircut-with-adrian'});return false;">
               Book with Adrian
             </button>
           </div>
