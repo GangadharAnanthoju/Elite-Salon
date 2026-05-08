@@ -239,13 +239,22 @@ class ChatWidget {
     }
   }
 
-  async callAPI(msg) {
-    const res = await fetch(CHAT_API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: msg, history: this.history.slice(-8) }),
-    });
-    if (!res.ok) throw new Error('API error');
+  async callAPI(msg, retry = true) {
+    let res;
+    try {
+      res = await fetch(CHAT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg, history: this.history.slice(-8) }),
+      });
+    } catch {
+      if (retry) { await new Promise(r => setTimeout(r, 4000)); return this.callAPI(msg, false); }
+      throw new Error('Network error');
+    }
+    if (!res.ok) {
+      if (retry) { await new Promise(r => setTimeout(r, 4000)); return this.callAPI(msg, false); }
+      throw new Error('API error');
+    }
     const data = await res.json();
     return data.reply || data.message || 'Sorry, I could not process that.';
   }
