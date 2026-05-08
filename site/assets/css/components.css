@@ -287,10 +287,17 @@
 }
 .chat-footer a { color: var(--gold); }
 
-/* Mobile chat */
-@media (max-width: 420px) {
-  .chat-window { right: 12px; left: 12px; width: auto; bottom: 90px; }
+/* Mobile chat — full-screen takeover */
+@media (max-width: 480px) {
+  .chat-window {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    transform-origin: bottom center;
+  }
   .chat-toggle { bottom: 20px; right: 20px; }
+  .chat-toggle.hidden { opacity: 0; pointer-events: none; }
 }
 
 /* ---- Lightbox ---- */
