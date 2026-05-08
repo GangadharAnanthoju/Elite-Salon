@@ -8,7 +8,7 @@
 const IS_LOCAL = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
 const CHAT_API_URL = IS_LOCAL
   ? 'http://localhost:8001/api/chat'
-  : ''; // TODO: replace '' with Azure Container App URL when deployed
+  : 'https://elite-salon-agent.delightfulplant-fbc6c41b.eastus.azurecontainerapps.io/api/chat';
 
 const QUICK_REPLIES = [
   'I want to book an appointment',
