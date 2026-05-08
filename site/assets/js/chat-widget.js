@@ -127,6 +127,11 @@ class ChatWidget {
     }
     this.input?.focus();
     this.scrollDown();
+    if (CHAT_API_URL) this.warmup();
+  }
+
+  warmup() {
+    fetch(CHAT_API_URL.replace('/api/chat', '/'), { method: 'GET' }).catch(() => {});
   }
 
   close() {
