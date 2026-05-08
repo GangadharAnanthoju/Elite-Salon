@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elite Saloon — Privacy Policy, Terms of Service, and Cookie Policy." />
+  <title>Legal | Elite Saloon</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/Elite-Salon-Logo.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <style>
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .legal-nav {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+    .legal-nav__title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+    .legal-nav ul { display: flex; flex-direction: column; gap: 0.25rem; }
+    .legal-nav a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius);
+      display: block;
+      transition: all 0.2s;
+    }
+    .legal-nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    .legal-section {
+      padding-top: 2rem;
+      border-top: 1px solid var(--gold-border);
+      margin-top: 2rem;
+    }
+    .legal-section:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .legal-section h2 {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+    .legal-section h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 1.5rem 0 0.75rem;
+    }
+    .legal-section p {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .legal-section ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .legal-section ul li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+    }
+    .legal-date {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      margin-bottom: 2rem;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-nav { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/images/logo/Elite-Salon-Logo.png" alt="Elite Saloon" class="nav__logo-img" />
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Pricing</a>
+      <a href="barbers.html">Our Barbers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="btn btn-outline nav__book" onclick="openChat()">Book Appointment</button>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <button class="nav__mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services & Pricing</a>
+  <a href="barbers.html">Our Barbers</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-gold" style="margin-top:1rem;" onclick="openChat()">Book Appointment</button>
+</div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="label">Legal</div>
+    <h1>Legal Information</h1>
+    <p>Privacy Policy · Terms of Service · Cookie Policy</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="legal-layout">
+
+      <!-- Side nav -->
+      <div class="legal-nav">
+        <div class="legal-nav__title">On this page</div>
+        <ul>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#cookies">Cookie Policy</a></li>
+          <li><a href="#contact-legal">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div>
+
+        <!-- Privacy Policy -->
+        <div class="legal-section" id="privacy">
+          <h2>Privacy Policy</h2>
+          <span class="legal-date">Last updated: May 2025</span>
+          <p>Elite Saloon ("we", "us", or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.</p>
+
+          <h3>Information We Collect</h3>
+          <p>We may collect the following types of information:</p>
+          <ul>
+            <li><strong>Contact information</strong> — name, email address, and phone number when you make a booking or contact us.</li>
+            <li><strong>Booking information</strong> — preferred services, barber preferences, and appointment history.</li>
+            <li><strong>Usage data</strong> — pages visited, time spent on site, and browser type, collected via analytics tools.</li>
+            <li><strong>Chat data</strong> — messages sent through our AI assistant are processed to generate responses and are not stored permanently.</li>
+          </ul>
+
+          <h3>How We Use Your Information</h3>
+          <ul>
+            <li>To confirm and manage your appointments.</li>
+            <li>To send appointment reminders and follow-up communications.</li>
+            <li>To improve our website and services.</li>
+            <li>To respond to your enquiries.</li>
+          </ul>
+
+          <h3>Third-Party Services</h3>
+          <p>We use the following third-party services that may process your data:</p>
+          <ul>
+            <li><strong>Calendly</strong> — for online appointment booking. Subject to <a href="https://calendly.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">Calendly's Privacy Policy</a>.</li>
+            <li><strong>Microsoft Azure</strong> — for website hosting and AI assistant services.</li>
+            <li><strong>Google Analytics</strong> — for website usage analytics (if enabled).</li>
+          </ul>
+
+          <h3>Data Retention</h3>
+          <p>We retain your personal information for as long as necessary to provide our services and comply with legal obligations. You may request deletion of your data at any time by contacting us.</p>
+
+          <h3>Your Rights</h3>
+          <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at <a href="mailto:hello@elitesaloon.com" style="color:var(--gold);">hello@elitesaloon.com</a>.</p>
+
+          <h3>Data Security</h3>
+          <p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, loss, or disclosure.</p>
+        </div>
+
+        <!-- Terms of Service -->
+        <div class="legal-section" id="terms">
+          <h2>Terms of Service</h2>
+          <span class="legal-date">Last updated: May 2025</span>
+          <p>By accessing our website or booking an appointment at Elite Saloon, you agree to the following terms.</p>
+
+          <h3>Appointments & Bookings</h3>
+          <ul>
+            <li>Appointments are subject to availability and confirmed via email or phone.</li>
+            <li>We reserve the right to decline bookings at our discretion.</li>
+            <li>Prices are as listed and subject to change without notice.</li>
+          </ul>
+
+          <h3>Cancellation Policy</h3>
+          <ul>
+            <li>We require at least <strong>24 hours notice</strong> for cancellations or rescheduling.</li>
+            <li>Late cancellations or no-shows may incur a fee at our discretion.</li>
+            <li>To cancel or reschedule, use the link in your confirmation email or call <strong>(212) 555-0100</strong>.</li>
+          </ul>
+
+          <h3>Late Arrivals</h3>
+          <p>We hold your appointment slot for up to 10 minutes. If you arrive later than 10 minutes without notice, we may need to reschedule your appointment to avoid delays for other clients.</p>
+
+          <h3>Service Results</h3>
+          <p>While we strive for excellence, results may vary based on hair type, condition, and individual factors. We are happy to discuss your expectations during a consultation prior to any service.</p>
+
+          <h3>Payments</h3>
+          <p>Payment is due at the time of service. We accept all major credit/debit cards, Apple Pay, Google Pay, and cash. All prices are in USD.</p>
+
+          <h3>Gift Cards</h3>
+          <p>Gift cards are non-refundable and non-transferable for cash. They are valid for 12 months from the date of purchase.</p>
+
+          <h3>Website Use</h3>
+          <p>You agree not to misuse our website, including but not limited to attempting to gain unauthorised access, scraping content, or interfering with the AI assistant in harmful ways. We reserve the right to restrict access at any time.</p>
+
+          <h3>Limitation of Liability</h3>
+          <p>Elite Saloon is not liable for any indirect, incidental, or consequential damages arising from your use of our website or services, to the fullest extent permitted by law.</p>
+        </div>
+
+        <!-- Cookie Policy -->
+        <div class="legal-section" id="cookies">
+          <h2>Cookie Policy</h2>
+          <span class="legal-date">Last updated: May 2025</span>
+          <p>Our website uses cookies and similar technologies to improve your browsing experience.</p>
+
+          <h3>What Are Cookies?</h3>
+          <p>Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences and understand how you use it.</p>
+
+          <h3>Cookies We Use</h3>
+          <ul>
+            <li><strong>Essential cookies</strong> — required for the website to function correctly. Cannot be disabled.</li>
+            <li><strong>Analytics cookies</strong> — help us understand how visitors use the site (e.g. pages visited, time on site). Used via Google Analytics.</li>
+            <li><strong>Third-party cookies</strong> — set by Calendly when you use the booking widget.</li>
+          </ul>
+
+          <h3>Managing Cookies</h3>
+          <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect the functionality of our website. For more information on managing cookies, visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener" style="color:var(--gold);">aboutcookies.org</a>.</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="legal-section" id="contact-legal">
+          <h2>Contact Us</h2>
+          <p>If you have any questions about this Legal Information, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:hello@elitesaloon.com" style="color:var(--gold);">hello@elitesaloon.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+12125550100" style="color:var(--gold);">(212) 555-0100</a></li>
+            <li><strong>Address:</strong> 123 Glamour Avenue, Suite 200, New York, NY 10001</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">Elite Saloon</span>
+        <p>Look good, feel confident. Premium barbershop and grooming in the heart of the city.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services & Pricing</a></li>
+          <li><a href="barbers.html">Our Barbers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="legal.html#privacy">Privacy Policy</a></li>
+          <li><a href="legal.html#terms">Terms of Service</a></li>
+          <li><a href="legal.html#cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <div class="footer__hours-row"><span>Mon – Fri</span><span>9am – 8pm</span></div>
+        <div class="footer__hours-row"><span>Saturday</span><span>9am – 7pm</span></div>
+        <div class="footer__hours-row"><span>Sunday</span><span>10am – 6pm</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elite Saloon. All rights reserved. · <a href="legal.html" style="color:var(--text-dim);">Legal</a></span>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chat-toggle" title="Book Appointment">✂</button>
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-header__avatar">ES</div>
+    <div class="chat-header__info">
+      <div class="chat-header__name">Elite Saloon Assistant</div>
+      <div class="chat-header__status">Online — ready to book</div>
+    </div>
+    <button class="chat-header__close" id="chat-close">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick-replies" id="quick-replies"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about services, pricing, or booking…"></textarea>
+    <button class="chat-send" id="chat-send">➤</button>
+  </div>
+  <div class="chat-footer">Powered by Elite AI</div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat-widget.js"></script>
+</body>
+</html>

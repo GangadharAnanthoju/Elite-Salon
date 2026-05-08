@@ -11,17 +11,48 @@ const CHAT_API_URL = IS_LOCAL
   : ''; // TODO: replace '' with Azure Container App URL when deployed
 
 const QUICK_REPLIES = [
+  'I want to book an appointment',
   'What services do you offer?',
   'How much is a haircut?',
-  'I want to book an appointment',
   'What are your hours?',
 ];
 
 const WELCOME = "Welcome to Elite Saloon ✂️\n\nI can help you book an appointment, answer questions about our services, or tell you anything about the saloon. How can I help?";
 
+const BOOKING_LINKS = {
+  adrian: 'https://calendly.com/gangadhar-ananthoju-sysintinc/haircut-with-adrian',
+  marcus: '', // add Calendly link when ready
+  alex:   '', // add Calendly link when ready
+  dean:   '', // add Calendly link when ready
+};
+
+// Friendly names shown in chat instead of raw URLs
+const CALENDLY_LABELS = {
+  'https://calendly.com/gangadhar-ananthoju-sysintinc/haircut-with-adrian': 'Book with Adrian',
+};
+
+// Open Calendly as popup — lazy loads the script if not already on the page
+function openCalendlyPopup(url) {
+  if (window.Calendly) {
+    Calendly.initPopupWidget({ url });
+    return;
+  }
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://assets.calendly.com/assets/external/widget.css';
+  document.head.appendChild(link);
+  const script = document.createElement('script');
+  script.src = 'https://assets.calendly.com/assets/external/widget.js';
+  script.onload = () => setTimeout(() => Calendly.initPopupWidget({ url }), 300);
+  document.head.appendChild(script);
+}
+window.openCalendlyPopup = openCalendlyPopup;
+
 const FALLBACK = {
-  hours:   "We're open Mon–Fri 9am–8pm, Sat 9am–7pm, and Sun 10am–6pm.",
-  booking: "I'd love to help you book! Please tell me:\n1. What service are you after?\n2. Any preferred barber?\n3. Your preferred day and time.",
+  hours:   "Our opening hours:\n• Mon – Fri: 9am – 8pm\n• Saturday: 9am – 7pm\n• Sunday: 10am – 6pm\n\nWould you like to book an appointment?",
+  booking: `I'd love to help you book! Choose your barber:\n\n` +
+           `✂ <a href="#" data-calendly="${BOOKING_LINKS.adrian}" style="color:var(--gold);font-weight:700;text-decoration:underline;">Book with Adrian</a> — Master Barber\n` +
+           `✂ <a href="barbers.html" style="color:var(--gold);text-decoration:underline;">View all barbers →</a>`,
   price:   "Our prices start at $35 for a classic haircut, $20 for a beard trim, and $50 for a Hair & Beard combo. Full pricing is on our <a href='services.html'>services page</a>.",
   location:"We're at 123 Glamour Avenue, Suite 200, New York, NY. <a href='contact.html'>Get directions →</a>",
   default: "Thanks for reaching out! For anything we can't handle here, call us at <a href='tel:+12125550100'>(212) 555-0100</a> or visit our <a href='contact.html'>contact page</a>.",
@@ -29,18 +60,39 @@ const FALLBACK = {
 
 class ChatWidget {
   constructor() {
-    this.toggle    = document.getElementById('chat-toggle');
-    this.win       = document.getElementById('chat-window');
-    this.closeBtn  = document.getElementById('chat-close');
-    this.messages  = document.getElementById('chat-messages');
-    this.input     = document.getElementById('chat-input');
-    this.sendBtn   = document.getElementById('chat-send');
-    this.quickEl   = document.getElementById('quick-replies');
-    this.history   = [];
-    this.isOpen    = false;
-    this.greeted   = false;
+    this.toggle   = document.getElementById('chat-toggle');
+    this.win      = document.getElementById('chat-window');
+    this.closeBtn = document.getElementById('chat-close');
+    this.messages = document.getElementById('chat-messages');
+    this.input    = document.getElementById('chat-input');
+    this.sendBtn  = document.getElementById('chat-send');
+    this.quickEl  = document.getElementById('quick-replies');
+    this.history  = JSON.parse(sessionStorage.getItem('es_history') || '[]');
+    this.greeted  = !!sessionStorage.getItem('es_html');
+    this.isOpen   = false;
     if (!this.toggle) return;
     this.bind();
+    this.restore();
+  }
+
+  save() {
+    sessionStorage.setItem('es_history', JSON.stringify(this.history));
+    if (this.messages) sessionStorage.setItem('es_html', this.messages.innerHTML);
+    sessionStorage.setItem('es_open', this.isOpen ? '1' : '0');
+  }
+
+  restore() {
+    const html = sessionStorage.getItem('es_html');
+    if (html && this.messages) {
+      this.messages.innerHTML = html;
+      this.scrollDown();
+    }
+    if (sessionStorage.getItem('es_open') === '1') {
+      this.win?.classList.add('open');
+      this.toggle.textContent = '✕';
+      this.isOpen = true;
+      this.scrollDown();
+    }
   }
 
   bind() {
@@ -54,23 +106,45 @@ class ChatWidget {
       this.input.style.height = 'auto';
       this.input.style.height = Math.min(this.input.scrollHeight, 100) + 'px';
     });
+    // Handle Calendly popup links inside chat bubbles
+    this.messages?.addEventListener('click', e => {
+      const link = e.target.closest('[data-calendly]');
+      if (link) {
+        e.preventDefault();
+        openCalendlyPopup(link.dataset.calendly);
+      }
+    });
   }
 
   open() {
     this.isOpen = true;
     this.win?.classList.add('open');
     this.toggle.textContent = '✕';
+    sessionStorage.setItem('es_open', '1');
     if (!this.greeted) {
       this.greeted = true;
       setTimeout(() => { this.addBot(WELCOME); this.showQuickReplies(); }, 280);
     }
     this.input?.focus();
+    this.scrollDown();
   }
 
   close() {
     this.isOpen = false;
     this.win?.classList.remove('open');
     this.toggle.textContent = '✂';
+    sessionStorage.setItem('es_open', '0');
+  }
+
+  linkify(text) {
+    return text.replace(/(https?:\/\/[^\s<]+)/g, (url) => {
+      const clean = url.replace(/[.,!?—\-]+$/, '');
+      if (clean.includes('calendly.com')) {
+        const label = CALENDLY_LABELS[clean] || 'Book Now';
+        return `<a href="#" data-calendly="${clean}" style="color:var(--gold);font-weight:700;text-decoration:underline;cursor:pointer;">${label}</a>`;
+      }
+      return `<a href="${clean}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">${clean}</a>`;
+    });
   }
 
   addBot(text) {
@@ -80,10 +154,11 @@ class ChatWidget {
     d.innerHTML = `
       <div class="chat-msg__avatar">ES</div>
       <div>
-        <div class="chat-msg__bubble">${text.replace(/\n/g, '<br/>')}</div>
+        <div class="chat-msg__bubble">${this.linkify(text).replace(/\n/g, '<br/>')}</div>
         <div class="chat-msg__time">${time}</div>
       </div>`;
     this.messages?.appendChild(d);
+    this.save();
     this.scrollDown();
   }
 
@@ -98,6 +173,7 @@ class ChatWidget {
         <div class="chat-msg__time">${time}</div>
       </div>`;
     this.messages?.appendChild(d);
+    this.save();
     this.scrollDown();
   }
 
@@ -137,6 +213,7 @@ class ChatWidget {
   async send(text) {
     this.addUser(text);
     this.history.push({ role: 'user', content: text });
+    this.save();
     if (this.sendBtn) this.sendBtn.disabled = true;
     this.showTyping();
 
@@ -146,6 +223,7 @@ class ChatWidget {
         : this.fallback(text);
       this.hideTyping();
       this.history.push({ role: 'assistant', content: reply });
+      this.save();
       this.addBot(reply);
     } catch {
       this.hideTyping();
@@ -174,7 +252,7 @@ class ChatWidget {
     if (/price|cost|how much|fee|charge|expensive/.test(t))      return FALLBACK.price;
     if (/location|address|where|find|directions|map/.test(t))    return FALLBACK.location;
     if (/service|offer|do you|what.*do/.test(t))
-      return "We offer haircuts, beard trims, hot towel shaves, hair color, scalp treatments, and combo packages. See the full menu on our <a href='services.html'>services page</a>.";
+      return "Our services:\n• Haircut & Style\n• Beard Trim & Sculpt\n• Hair & Beard Combo\n• Hot Towel Shave\n• Hair Color & Highlights\n• Scalp Treatment\n• Full Works\n\nSee full pricing on our <a href='services.html' style='color:var(--gold);text-decoration:underline;'>services page</a>.";
     if (/barber|stylist|who|staff|team/.test(t))
       return "We have four expert barbers — Marcus, James, Alex, and Dean. <a href='barbers.html'>Meet the team →</a>";
     if (/hello|hi |hey|good morning|good afternoon/.test(t))

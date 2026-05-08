@@ -1,62 +1,110 @@
 [
   {
     "question": "What are your opening hours?",
-    "answer": "We are open Monday to Friday 9am–8pm, Saturday 9am–7pm, and Sunday 10am–6pm."
+    "answer": "Our opening hours:\n• Mon – Fri: 9am – 8pm\n• Saturday: 9am – 7pm\n• Sunday: 10am – 6pm\n\nWould you like to book an appointment?"
   },
   {
     "question": "Where are you located?",
-    "answer": "Elite Saloon is at 123 Glamour Avenue, Suite 200, New York, NY 10001."
+    "answer": "Elite Saloon is at 123 Glamour Avenue, Suite 200, New York, NY 10001. Paid street parking is available on Glamour Avenue, and there is a parking garage on 5th Street about 1 block away."
+  },
+  {
+    "question": "What services do you offer?",
+    "answer": "Our services:\n• Haircut & Style — from $35\n• Beard Trim & Shape — from $20\n• Hair & Beard Combo — from $50\n• Hot Towel Shave — $40\n• Hair Color & Highlights — from $65\n• Scalp Treatment — from $45\n• Full Works — $75\n\nSee the full menu at our services page or ask me about any specific service."
   },
   {
     "question": "How do I book an appointment?",
-    "answer": "You can book by chatting with our AI assistant, calling us at (212) 555-0100, or emailing hello@elitesaloon.com."
+    "answer": "You can book directly through this chat, by calling (212) 555-0100, or by emailing hello@elitesaloon.com. Online booking is available for Adrian via his personal Calendly link."
   },
   {
     "question": "How much does a haircut cost?",
-    "answer": "A classic haircut starts from $35. Fades start at $40. A full Hair & Beard Combo is $50."
+    "answer": "A classic haircut starts from $35. Fades start at $40. A full Hair & Beard Combo is $50. The Full Works (haircut, beard, hot towel, scalp massage) is $75."
   },
   {
     "question": "How much does a beard trim cost?",
-    "answer": "A beard trim and shape starts from $20. A full beard sculpt/design is $28."
+    "answer": "A beard trim and shape starts from $20. A full beard sculpt/design is $28. Add a beard conditioning oil treatment for $10."
   },
   {
     "question": "Do you offer hot towel shaves?",
-    "answer": "Yes! Our Hot Towel Straight Razor Shave is $40 and is one of our most popular services."
+    "answer": "Yes — our Hot Towel Straight Razor Shave ($40) is one of our most popular services. It includes a hot towel prep, premium lather, and straight razor finish for the closest shave possible."
   },
   {
     "question": "Who are your barbers?",
-    "answer": "Our team includes Adrian (Master Barber), Marcus (Senior Barber), Alex R. (Color Specialist), and Dean K. (Grooming Specialist)."
+    "answer": "Meet our team:\n• Adrian — Master Barber (10 years)\n• Marcus — Senior Barber (8 years)\n• Alex R. — Color Specialist (7 years)\n• Dean K. — Grooming Specialist (6 years)\n\nWould you like to book with a specific barber?"
   },
   {
     "question": "Can I choose my barber?",
-    "answer": "Absolutely. When booking, just let us know your preferred barber and we will do our best to accommodate you."
+    "answer": "Absolutely. You can request a specific barber when booking. Adrian is bookable online via his Calendly link. For Marcus, Alex, or Dean, chat with us here, call (212) 555-0100, or email hello@elitesaloon.com."
+  },
+  {
+    "question": "What does Adrian specialise in?",
+    "answer": "Adrian is our Master Barber with 10 years of experience. He specialises in Precision Fades, Beard Sculpting, Classic Cuts, and Hot Towel Shaves."
+  },
+  {
+    "question": "What does Marcus specialise in?",
+    "answer": "Marcus is our Senior Barber with 8 years of experience. He specialises in Textured Cuts, Line-Ups, Hair & Beard Combos, and Skin Fades."
+  },
+  {
+    "question": "What does Alex specialise in?",
+    "answer": "Alex R. is our Color Specialist with 7 years of experience. He specialises in Hair Color, Grey Blending, Highlights, and Balayage."
+  },
+  {
+    "question": "What does Dean specialise in?",
+    "answer": "Dean K. is our Grooming Specialist with 6 years of experience. He specialises in Hot Towel Shaves, Beard Sculpting, Scalp Treatments, and Straight Razor shaving."
   },
   {
     "question": "Do you do hair color?",
-    "answer": "Yes. Alex R. is our Color Specialist. Single process color starts at $65, highlights from $80, and grey blending from $70."
+    "answer": "Yes — Alex R. is our dedicated Color Specialist. Single process color from $65, partial highlights from $80, full highlights from $110, grey blending from $70, and toner/gloss from $35."
   },
   {
     "question": "How do I cancel or reschedule?",
-    "answer": "Please cancel or reschedule at least 24 hours in advance by calling (212) 555-0100 or emailing hello@elitesaloon.com."
+    "answer": "Please cancel or reschedule at least 24 hours in advance. If you booked via Calendly, use the reschedule link in your confirmation email. Otherwise call (212) 555-0100 or email hello@elitesaloon.com."
   },
   {
     "question": "Do you accept walk-ins?",
-    "answer": "We accept walk-ins based on availability, but we recommend booking in advance to secure your preferred barber and time."
+    "answer": "We do accept walk-ins based on availability, but we always recommend booking in advance — especially on weekends — to guarantee your preferred barber and time."
   },
   {
     "question": "What payment methods do you accept?",
-    "answer": "We accept all major credit and debit cards, Apple Pay, Google Pay, and cash."
+    "answer": "We accept all major credit and debit cards, Apple Pay, Google Pay, and cash. Tips can be added to card payments."
   },
   {
     "question": "Do you sell gift cards?",
-    "answer": "Yes! Gift cards are available in any amount and can be purchased in-salon or by calling us."
-  },
-  {
-    "question": "Is parking available?",
-    "answer": "There is paid street parking on Glamour Avenue and a parking garage on 5th Street approximately 1 block away."
+    "answer": "Yes! Gift cards are available in any amount, perfect for any occasion. Purchase in-salon or call us at (212) 555-0100."
   },
   {
     "question": "What products do you use?",
-    "answer": "We use premium, ammonia-free product lines. Our branded products — Elite Saloon Shampoo, Beard Oil, and Matte Paste — are also available to purchase in-salon."
+    "answer": "We use premium grooming product lines. Our own branded products — Elite Saloon Shampoo, Beard Oil, and Matte Paste — are also available to purchase in-salon."
+  },
+  {
+    "question": "What should I expect on my first visit?",
+    "answer": "Arrive 5 minutes early. Your barber will start with a quick consultation to understand your style preferences. Sit back, relax, and enjoy the experience — most visits include a complimentary beverage. You'll leave looking and feeling sharp."
+  },
+  {
+    "question": "How long do services take?",
+    "answer": "Approximate service durations:\n• Classic Haircut: ~45 min\n• Fade: ~45 min\n• Beard Trim: ~20 min\n• Hair & Beard Combo: ~60 min\n• Hot Towel Shave: ~45 min\n• Full Works: ~90 min\n• Color services: 60 – 180 min"
+  },
+  {
+    "question": "What is your tipping policy?",
+    "answer": "Tipping is always appreciated but never required. You can add a tip to any card payment. A standard tip is 15–20% of the service total."
+  },
+  {
+    "question": "What if I am running late?",
+    "answer": "Please call us at (212) 555-0100 if you're running late. We hold your slot for up to 10 minutes. After that, we may need to reschedule to avoid delays for other clients."
+  },
+  {
+    "question": "Do you cut women's hair?",
+    "answer": "Elite Saloon specialises in men's grooming and barbershop services. We do not currently offer women's hair services."
+  },
+  {
+    "question": "Do you cut children's hair?",
+    "answer": "Yes, we offer children's cuts (under 12) for $25. We recommend booking in advance and arriving a few minutes early to help your child settle in."
+  },
+  {
+    "question": "Do you offer group or corporate bookings?",
+    "answer": "Yes — we can accommodate group bookings for events, weddings, or corporate grooming. Please call (212) 555-0100 or email hello@elitesaloon.com to arrange."
+  },
+  {
+    "question": "Is there parking nearby?",
+    "answer": "Yes — paid street parking on Glamour Avenue, and a parking garage on 5th Street about 1 block from us."
   }
 ]
