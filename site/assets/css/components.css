@@ -295,6 +295,7 @@
     height: 100%;
     border-radius: 0;
     transform-origin: bottom center;
+    z-index: 1100;
   }
   .chat-toggle { bottom: 20px; right: 20px; }
   .chat-header__close {
