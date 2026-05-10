@@ -128,7 +128,6 @@ class ChatWidget {
     this.input?.focus();
     this.scrollDown();
     if (CHAT_API_URL) this.warmup();
-    if (window.innerWidth <= 480) this.toggle.classList.add('hidden');
   }
 
   warmup() {
@@ -139,7 +138,6 @@ class ChatWidget {
     this.isOpen = false;
     this.win?.classList.remove('open');
     this.toggle.textContent = '✂';
-    this.toggle.classList.remove('hidden');
     sessionStorage.setItem('es_open', '0');
   }
 

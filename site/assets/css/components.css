@@ -297,7 +297,11 @@
     transform-origin: bottom center;
   }
   .chat-toggle { bottom: 20px; right: 20px; }
-  .chat-toggle.hidden { opacity: 0; pointer-events: none; }
+  .chat-header__close {
+    font-size: 1.4rem;
+    padding: 8px 12px;
+    color: var(--text);
+  }
 }
 
 /* ---- Lightbox ---- */
