@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon AI — Theme Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #111;
+      color: #eee;
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .page-header p {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #888;
+      letter-spacing: 0.06em;
+    }
+
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── Theme Card ── */
+    .theme-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .theme-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 56px rgba(0,0,0,0.6);
+    }
+
+    /* Mini site preview inside card */
+    .preview {
+      padding: 1.25rem 1.5rem 1rem;
+    }
+    .preview__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .preview__logo {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .preview__nav-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .preview__nav-links span {
+      font-size: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+    .preview__btn-sm {
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 3px;
+      border: none;
+      cursor: default;
+    }
+    .preview__hero {
+      border-radius: 6px;
+      padding: 1.5rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .preview__hero-tag {
+      font-size: 0.45rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.4rem;
+    }
+    .preview__hero-h {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+    .preview__hero-sub {
+      font-size: 0.5rem;
+      opacity: 0.6;
+      margin-bottom: 0.9rem;
+      line-height: 1.5;
+    }
+    .preview__swatches {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+
+    /* Card footer */
+    .theme-card__footer {
+      padding: 1rem 1.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .theme-card__name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .theme-card__tag {
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      opacity: 0.55;
+      margin-top: 2px;
+    }
+    .theme-card__select {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .theme-card__select:hover { opacity: 0.85; }
+
+    /* ══════════════════════════════════════
+       THEME 1 — DARK GOLD (current)
+    ══════════════════════════════════════ */
+    .t-dark-gold .preview          { background: #0C0A07; }
+    .t-dark-gold .preview__logo    { color: #C9A030; }
+    .t-dark-gold .preview__nav-links span { color: #F5F0E8; }
+    .t-dark-gold .preview__btn-sm  { background: #C9A030; color: #0C0A07; }
+    .t-dark-gold .preview__hero    { background: #1A1510; }
+    .t-dark-gold .preview__hero-tag{ color: #C9A030; }
+    .t-dark-gold .preview__hero-h  { color: #F5F0E8; }
+    .t-dark-gold .preview__hero-sub{ color: #F5F0E8; }
+    .t-dark-gold .theme-card__footer { background: #161310; }
+    .t-dark-gold .theme-card__name { color: #F5F0E8; }
+    .t-dark-gold .theme-card__tag  { color: #F5F0E8; }
+    .t-dark-gold .theme-card__select { background: #C9A030; color: #0C0A07; }
+
+    /* ══════════════════════════════════════
+       THEME 2 — ROYAL NAVY
+    ══════════════════════════════════════ */
+    .t-royal-navy .preview          { background: #080D1A; }
+    .t-royal-navy .preview__logo    { color: #5B9BD5; }
+    .t-royal-navy .preview__nav-links span { color: #C8D8F0; }
+    .t-royal-navy .preview__btn-sm  { background: #5B9BD5; color: #080D1A; }
+    .t-royal-navy .preview__hero    { background: #0D1525; }
+    .t-royal-navy .preview__hero-tag{ color: #5B9BD5; }
+    .t-royal-navy .preview__hero-h  { color: #E8F0FF; }
+    .t-royal-navy .preview__hero-sub{ color: #C8D8F0; }
+    .t-royal-navy .theme-card__footer { background: #0B1020; }
+    .t-royal-navy .theme-card__name { color: #E8F0FF; }
+    .t-royal-navy .theme-card__tag  { color: #C8D8F0; }
+    .t-royal-navy .theme-card__select { background: #5B9BD5; color: #080D1A; }
+
+    /* ══════════════════════════════════════
+       THEME 3 — FOREST PRESTIGE
+    ══════════════════════════════════════ */
+    .t-forest .preview          { background: #070F0A; }
+    .t-forest .preview__logo    { color: #4CAF7D; }
+    .t-forest .preview__nav-links span { color: #D4EDE0; }
+    .t-forest .preview__btn-sm  { background: #4CAF7D; color: #070F0A; }
+    .t-forest .preview__hero    { background: #0D1A10; }
+    .t-forest .preview__hero-tag{ color: #4CAF7D; }
+    .t-forest .preview__hero-h  { color: #E8F5EC; }
+    .t-forest .preview__hero-sub{ color: #D4EDE0; }
+    .t-forest .theme-card__footer { background: #0A1410; }
+    .t-forest .theme-card__name { color: #E8F5EC; }
+    .t-forest .theme-card__tag  { color: #D4EDE0; }
+    .t-forest .theme-card__select { background: #4CAF7D; color: #070F0A; }
+
+    /* ══════════════════════════════════════
+       THEME 4 — CRIMSON NOIR
+    ══════════════════════════════════════ */
+    .t-crimson .preview          { background: #0F0708; }
+    .t-crimson .preview__logo    { color: #C93050; }
+    .t-crimson .preview__nav-links span { color: #F0D8DC; }
+    .t-crimson .preview__btn-sm  { background: #C93050; color: #fff; }
+    .t-crimson .preview__hero    { background: #1A0B0D; }
+    .t-crimson .preview__hero-tag{ color: #C93050; }
+    .t-crimson .preview__hero-h  { color: #F5E8EA; }
+    .t-crimson .preview__hero-sub{ color: #F0D8DC; }
+    .t-crimson .theme-card__footer { background: #140A0B; }
+    .t-crimson .theme-card__name { color: #F5E8EA; }
+    .t-crimson .theme-card__tag  { color: #F0D8DC; }
+    .t-crimson .theme-card__select { background: #C93050; color: #fff; }
+
+    /* ══════════════════════════════════════
+       THEME 5 — PEARL & BLACK (light)
+    ══════════════════════════════════════ */
+    .t-pearl .preview          { background: #F7F5F2; }
+    .t-pearl .preview__logo    { color: #1A1A1A; }
+    .t-pearl .preview__nav-links span { color: #333; }
+    .t-pearl .preview__btn-sm  { background: #1A1A1A; color: #F7F5F2; }
+    .t-pearl .preview__hero    { background: #EDEBE7; }
+    .t-pearl .preview__hero-tag{ color: #555; }
+    .t-pearl .preview__hero-h  { color: #1A1A1A; }
+    .t-pearl .preview__hero-sub{ color: #555; }
+    .t-pearl .theme-card__footer { background: #ECEAE6; }
+    .t-pearl .theme-card__name { color: #1A1A1A; }
+    .t-pearl .theme-card__tag  { color: #555; }
+    .t-pearl .theme-card__select { background: #1A1A1A; color: #F7F5F2; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      background: #C9A030;
+      color: #0C0A07;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 640px) {
+      .themes-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Salon AI — Theme Showcase</h1>
+  <p>Choose a theme for your salon website. Same features, different look.</p>
+</header>
+
+<div class="themes-grid">
+
+  <!-- THEME 1: DARK GOLD -->
+  <div class="theme-card t-dark-gold">
+    <div class="preview">
+      <div class="preview__nav">
+        <div class="preview__logo">✂ Elite Saloon</div>
+        <div class="preview__nav-links">
+          <span>Services</span>
+          <span>Barbers</span>
+          <span>Gallery</span>
+        </div>
+        <button class="preview__btn-sm">Book Now</button>
+      </div>
+      <div class="preview__hero">
+        <div class="preview__hero-tag">Premium Barbershop</div>
+        <div class="preview__hero-h">Look Good.<br>Feel Confident.</div>
+        <div class="preview__hero-sub">Expert cuts, hot towel shaves &amp; grooming for the modern gentleman.</div>
+        <div class="preview__swatches">
+          <div class="swatch" style="background:#0C0A07"></div>
+          <div class="swatch" style="background:#C9A030"></div>
+          <div class="swatch" style="background:#F5F0E8"></div>
+          <div class="swatch" style="background:#1A1510"></div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-card__footer">
+      <div>
+        <div class="theme-card__name">Dark Gold <span class="badge">Current</span></div>
+        <div class="theme-card__tag">Black · Gold · Warm White</div>
+      </div>
+      <button class="theme-card__select">Select</button>
+    </div>
+  </div>
+
+  <!-- THEME 2: ROYAL NAVY -->
+  <div class="theme-card t-royal-navy">
+    <div class="preview">
+      <div class="preview__nav">
+        <div class="preview__logo">✂ Elite Saloon</div>
+        <div class="preview__nav-links">
+          <span>Services</span>
+          <span>Barbers</span>
+          <span>Gallery</span>
+        </div>
+        <button class="preview__btn-sm">Book Now</button>
+      </div>
+      <div class="preview__hero">
+        <div class="preview__hero-tag">Premium Barbershop</div>
+        <div class="preview__hero-h">Look Good.<br>Feel Confident.</div>
+        <div class="preview__hero-sub">Expert cuts, hot towel shaves &amp; grooming for the modern gentleman.</div>
+        <div class="preview__swatches">
+          <div class="swatch" style="background:#080D1A"></div>
+          <div class="swatch" style="background:#5B9BD5"></div>
+          <div class="swatch" style="background:#E8F0FF"></div>
+          <div class="swatch" style="background:#0D1525"></div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-card__footer">
+      <div>
+        <div class="theme-card__name">Royal Navy</div>
+        <div class="theme-card__tag">Navy · Steel Blue · Ice White</div>
+      </div>
+      <button class="theme-card__select">Select</button>
+    </div>
+  </div>
+
+  <!-- THEME 3: FOREST PRESTIGE -->
+  <div class="theme-card t-forest">
+    <div class="preview">
+      <div class="preview__nav">
+        <div class="preview__logo">✂ Elite Saloon</div>
+        <div class="preview__nav-links">
+          <span>Services</span>
+          <span>Barbers</span>
+          <span>Gallery</span>
+        </div>
+        <button class="preview__btn-sm">Book Now</button>
+      </div>
+      <div class="preview__hero">
+        <div class="preview__hero-tag">Premium Barbershop</div>
+        <div class="preview__hero-h">Look Good.<br>Feel Confident.</div>
+        <div class="preview__hero-sub">Expert cuts, hot towel shaves &amp; grooming for the modern gentleman.</div>
+        <div class="preview__swatches">
+          <div class="swatch" style="background:#070F0A"></div>
+          <div class="swatch" style="background:#4CAF7D"></div>
+          <div class="swatch" style="background:#E8F5EC"></div>
+          <div class="swatch" style="background:#0D1A10"></div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-card__footer">
+      <div>
+        <div class="theme-card__name">Forest Prestige</div>
+        <div class="theme-card__tag">Deep Green · Sage · Cream</div>
+      </div>
+      <button class="theme-card__select">Select</button>
+    </div>
+  </div>
+
+  <!-- THEME 4: CRIMSON NOIR -->
+  <div class="theme-card t-crimson">
+    <div class="preview">
+      <div class="preview__nav">
+        <div class="preview__logo">✂ Elite Saloon</div>
+        <div class="preview__nav-links">
+          <span>Services</span>
+          <span>Barbers</span>
+          <span>Gallery</span>
+        </div>
+        <button class="preview__btn-sm">Book Now</button>
+      </div>
+      <div class="preview__hero">
+        <div class="preview__hero-tag">Premium Barbershop</div>
+        <div class="preview__hero-h">Look Good.<br>Feel Confident.</div>
+        <div class="preview__hero-sub">Expert cuts, hot towel shaves &amp; grooming for the modern gentleman.</div>
+        <div class="preview__swatches">
+          <div class="swatch" style="background:#0F0708"></div>
+          <div class="swatch" style="background:#C93050"></div>
+          <div class="swatch" style="background:#F5E8EA"></div>
+          <div class="swatch" style="background:#1A0B0D"></div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-card__footer">
+      <div>
+        <div class="theme-card__name">Crimson Noir</div>
+        <div class="theme-card__tag">Near Black · Deep Red · Blush</div>
+      </div>
+      <button class="theme-card__select">Select</button>
+    </div>
+  </div>
+
+  <!-- THEME 5: PEARL & BLACK -->
+  <div class="theme-card t-pearl">
+    <div class="preview">
+      <div class="preview__nav">
+        <div class="preview__logo">✂ Elite Saloon</div>
+        <div class="preview__nav-links">
+          <span>Services</span>
+          <span>Barbers</span>
+          <span>Gallery</span>
+        </div>
+        <button class="preview__btn-sm">Book Now</button>
+      </div>
+      <div class="preview__hero">
+        <div class="preview__hero-tag">Premium Barbershop</div>
+        <div class="preview__hero-h">Look Good.<br>Feel Confident.</div>
+        <div class="preview__hero-sub">Expert cuts, hot towel shaves &amp; grooming for the modern gentleman.</div>
+        <div class="preview__swatches">
+          <div class="swatch" style="background:#F7F5F2; border-color: #ccc;"></div>
+          <div class="swatch" style="background:#1A1A1A"></div>
+          <div class="swatch" style="background:#EDEBE7; border-color:#ccc;"></div>
+          <div class="swatch" style="background:#555"></div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-card__footer">
+      <div>
+        <div class="theme-card__name">Pearl & Black</div>
+        <div class="theme-card__tag">Ivory · Black · Stone Grey</div>
+      </div>
+      <button class="theme-card__select">Select</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
