@@ -130,6 +130,8 @@ class ChatWidget {
     this.input?.focus();
     this.scrollDown();
     if (CHAT_API_URL) this.warmup();
+    // Force textarea reflow so placeholder renders at correct width on first open
+    if (this.input) setTimeout(() => { this.input.style.height = 'auto'; }, 50);
   }
 
   warmup() {
