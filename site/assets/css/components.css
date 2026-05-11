@@ -324,7 +324,7 @@
   .chat-input {
     font-size: 16px;
     padding: 0.4rem 0.75rem;
-    min-height: 48px;
+    min-height: 49px;
   }
   .chat-msg__bubble { font-size: 0.85rem; }
 }
