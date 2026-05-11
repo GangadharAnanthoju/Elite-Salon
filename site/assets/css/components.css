@@ -314,7 +314,11 @@
     padding: 8px 12px;
     color: var(--text);
   }
-  .chat-input { font-size: 16px; }
+  .chat-input {
+    font-size: 16px;
+    padding: 0.4rem 0.75rem;
+  }
+  .chat-msg__bubble { font-size: 0.85rem; }
 }
 
 /* ---- Lightbox ---- */
