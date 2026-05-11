@@ -290,9 +290,12 @@
 /* Mobile chat — full-screen takeover */
 @media (max-width: 480px) {
   .chat-window {
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     border-radius: 0;
     transform-origin: bottom center;
     z-index: 1100;
