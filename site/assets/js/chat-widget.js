@@ -201,11 +201,14 @@ class ChatWidget {
     this.scrollDown();
   }
 
-  showTyping() {
+  showTyping(label = '') {
     const d = document.createElement('div');
     d.className = 'chat-msg'; d.id = 'chat-typing';
     d.innerHTML = `<div class="chat-msg__avatar">ES</div>
-      <div class="chat-typing"><span></span><span></span><span></span></div>`;
+      <div>
+        <div class="chat-typing"><span></span><span></span><span></span></div>
+        ${label ? `<div class="chat-typing__label">${label}</div>` : ''}
+      </div>`;
     this.messages?.appendChild(d);
     this.scrollDown();
   }
@@ -239,7 +242,7 @@ class ChatWidget {
     this.history.push({ role: 'user', content: text });
     this.save();
     if (this.sendBtn) this.sendBtn.disabled = true;
-    this.showTyping();
+    this.showTyping(this.history.length <= 1 ? 'Initialising chat...' : '');
 
     try {
       const reply = CHAT_API_URL

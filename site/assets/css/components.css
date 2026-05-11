@@ -211,6 +211,13 @@
   40%            { transform: scale(1);   opacity: 1; }
 }
 
+.chat-typing__label {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
 /* Quick replies */
 .chat-quick-replies {
   display: flex;
