@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is Salon AI?",
+    "answer": "Salon AI is a done-for-you website and AI assistant package for salons and barbershops. It gives your salon a professional website, an AI chatbot that answers client questions 24/7, and online appointment booking — all customized to your brand."
+  },
+  {
+    "question": "What does Salon AI do for my salon?",
+    "answer": "It answers client questions automatically (hours, pricing, services, barbers), takes appointment bookings online around the clock, and gives your salon a professional website — so you spend less time on the phone and more time cutting."
+  },
+  {
+    "question": "Do I need to be technical to use it?",
+    "answer": "Not at all. We handle everything — setup, hosting, and customization. You just tell us your salon details and we take care of the rest."
+  },
+  {
+    "question": "How much does it cost?",
+    "answer": "Setup is a one-time fee of $599 (regular price $1,099). After that, plans start at $79.99/month for one barber, $139.99/month for two barbers, and $29.99/month for each additional barber."
+  },
+  {
+    "question": "Is there a contract?",
+    "answer": "No long-term contracts. Month to month — cancel any time."
+  },
+  {
+    "question": "What is included in the monthly fee?",
+    "answer": "Hosting, AI chatbot, online appointments, and support. No hidden fees."
+  },
+  {
+    "question": "Is there a free trial?",
+    "answer": "We offer a live demo of the full product. Contact us and we'll set one up for your salon within 24 hours."
+  },
+  {
+    "question": "Can clients book appointments through the chatbot?",
+    "answer": "Yes. The AI guides clients to book directly online, 24/7 — even when your salon is closed."
+  },
+  {
+    "question": "Can I choose my own colors and branding?",
+    "answer": "Yes. We offer multiple themes and customize the colors, logo, and content to match your salon's brand."
+  },
+  {
+    "question": "Does it work on mobile?",
+    "answer": "Yes — the website and chatbot are fully optimized for phones and tablets."
+  },
+  {
+    "question": "Can I have multiple barbers or stylists listed?",
+    "answer": "Yes. Each barber or stylist gets their own profile, photo, specialties, and booking link."
+  },
+  {
+    "question": "What if a client asks something the AI does not know?",
+    "answer": "It politely directs them to call or email your salon — it never makes up answers."
+  },
+  {
+    "question": "How long does setup take?",
+    "answer": "Typically 3–5 business days from when we receive your salon details."
+  },
+  {
+    "question": "What information do you need to get started?",
+    "answer": "Your salon name, logo, services and prices, staff profiles, photos, and booking links. We'll send you a simple questionnaire to fill in."
+  },
+  {
+    "question": "What if I want to change something after launch?",
+    "answer": "Just contact us. Minor updates such as hours, prices, or adding a new staff member are included in your monthly plan."
+  },
+  {
+    "question": "Who hosts the website?",
+    "answer": "We host everything on Microsoft Azure — secure, fast, and reliable."
+  },
+  {
+    "question": "How do I get started?",
+    "answer": "Fill out our contact form or chat with us here. We'll schedule a quick call and have your demo ready within 24 hours."
+  },
+  {
+    "question": "Do you work with beauty salons as well as barbershops?",
+    "answer": "Yes. Salon AI works for barbershops, hair salons, beauty salons, and any appointment-based grooming business."
+  },
+  {
+    "question": "Can I see a live demo?",
+    "answer": "Yes — visit elite.sysintinc.com to see a fully working demo salon with the AI chatbot live. You can also request a personalized demo for your own salon."
+  },
+  {
+    "question": "What themes are available?",
+    "answer": "We currently offer six themes — Dark Gold, Royal Navy, Forest Prestige, Crimson Noir, Pearl & Black, and Rose Luxe. All themes can be further customized to match your brand colors and logo."
+  }
+]
