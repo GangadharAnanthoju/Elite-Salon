@@ -73,6 +73,7 @@ class ChatWidget {
     if (!this.toggle) return;
     this.bind();
     this.restore();
+    this.bindViewport();
   }
 
   save() {
@@ -128,16 +129,30 @@ class ChatWidget {
     this.input?.focus();
     this.scrollDown();
     if (CHAT_API_URL) this.warmup();
+    if (this._vpResize) this._vpResize();
   }
 
   warmup() {
     fetch(CHAT_API_URL.replace('/api/chat', '/'), { method: 'GET' }).catch(() => {});
   }
 
+  bindViewport() {
+    if (!window.visualViewport) return;
+    const resize = () => {
+      if (!this.isOpen || window.innerWidth > 480) return;
+      this.win.style.height = window.visualViewport.height + 'px';
+      this.win.style.top    = window.visualViewport.offsetTop + 'px';
+    };
+    window.visualViewport.addEventListener('resize', resize);
+    window.visualViewport.addEventListener('scroll', resize);
+    this._vpResize = resize;
+  }
+
   close() {
     this.isOpen = false;
     this.win?.classList.remove('open');
     this.toggle.textContent = '✂';
+    if (this.win) { this.win.style.height = ''; this.win.style.top = ''; }
     sessionStorage.setItem('es_open', '0');
   }
 
