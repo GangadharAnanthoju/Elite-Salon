@@ -140,11 +140,10 @@ class ChatWidget {
     if (!window.visualViewport) return;
     const resize = () => {
       if (!this.isOpen || window.innerWidth > 480) return;
-      this.win.style.height = window.visualViewport.height + 'px';
-      this.win.style.top    = window.visualViewport.offsetTop + 'px';
+      const kb = Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop);
+      this.win.style.bottom = kb + 'px';
     };
     window.visualViewport.addEventListener('resize', resize);
-    window.visualViewport.addEventListener('scroll', resize);
     this._vpResize = resize;
   }
 
@@ -152,7 +151,7 @@ class ChatWidget {
     this.isOpen = false;
     this.win?.classList.remove('open');
     this.toggle.textContent = '✂';
-    if (this.win) { this.win.style.height = ''; this.win.style.top = ''; }
+    if (this.win) this.win.style.bottom = '';
     sessionStorage.setItem('es_open', '0');
   }
 
