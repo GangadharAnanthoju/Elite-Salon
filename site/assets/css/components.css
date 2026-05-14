@@ -296,31 +296,16 @@
 }
 .chat-footer a { color: var(--gold); }
 
-/* Mobile chat — full-screen takeover */
+/* Mobile chat — popup style */
 @media (max-width: 480px) {
   .chat-window {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    max-height: none;
-    border-radius: 0;
-    z-index: 1100;
-    transition: opacity 0.2s ease;
-    transform: none !important;
+    width: calc(100vw - 32px);
+    height: 72vh;
+    right: 16px;
+    bottom: 90px;
+    border-radius: 12px;
   }
-  .chat-window.open {
-    opacity: 1;
-  }
-  .chat-toggle { bottom: 20px; right: 20px; }
-  .chat-header__close {
-    font-size: 1.4rem;
-    padding: 8px 12px;
-    color: var(--text);
-  }
+  .chat-toggle { bottom: 16px; right: 16px; }
   .chat-input {
     font-size: 16px;
     padding: 0.4rem 0.75rem;

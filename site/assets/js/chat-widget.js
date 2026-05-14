@@ -91,7 +91,6 @@ class ChatWidget {
       this.win?.classList.add('open');
       this.toggle.textContent = '✕';
       this.isOpen = true;
-      if (window.innerWidth <= 480) this.lockScroll();
       this.scrollDown();
     }
   }
@@ -122,7 +121,6 @@ class ChatWidget {
     this.win?.classList.add('open');
     this.toggle.textContent = '✕';
     sessionStorage.setItem('es_open', '1');
-    if (window.innerWidth <= 480) this.lockScroll();
     if (!this.greeted) {
       this.greeted = true;
       setTimeout(() => { this.addBot(WELCOME); this.showQuickReplies(); }, 280);
@@ -137,25 +135,10 @@ class ChatWidget {
     fetch(CHAT_API_URL.replace('/api/chat', '/'), { method: 'GET' }).catch(() => {});
   }
 
-  lockScroll() {
-    this._scrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${this._scrollY}px`;
-    document.body.style.width = '100%';
-  }
-
-  unlockScroll() {
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    window.scrollTo(0, this._scrollY || 0);
-  }
-
   close() {
     this.isOpen = false;
     this.win?.classList.remove('open');
     this.toggle.textContent = '✂';
-    if (window.innerWidth <= 480) this.unlockScroll();
     sessionStorage.setItem('es_open', '0');
   }
 
