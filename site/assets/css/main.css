@@ -922,6 +922,8 @@ p:last-child { margin-bottom: 0; }
 }
 @media (max-width: 768px) {
   :root { --section-py: 3.5rem; }
+  .hero { margin-top: var(--nav-h); height: 60vh; min-height: 480px; }
+  .hero__inner { padding-top: 2rem; }
   .nav__links, .nav__book { display: none; }
   .nav__hamburger { display: flex; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
