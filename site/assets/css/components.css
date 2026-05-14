@@ -301,6 +301,7 @@
   .chat-window {
     width: calc(100vw - 32px);
     height: 72vh;
+    max-height: calc(100vh - 160px);
     right: 16px;
     bottom: 90px;
     border-radius: 12px;
